@@ -45,6 +45,8 @@ namespace Users_Product_Security.Controllers
         {
             return _userRepo.CreateUsers(user);
         }
+
+        ///These methods below used to generate tokens based on claims .
         private string generate(User user)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
